@@ -3,6 +3,7 @@ package com.formacion.springboot.app.micro.item.controllers;
 import com.formacion.springboot.app.micro.item.models.Item;
 import com.formacion.springboot.app.micro.item.models.Producto;
 import com.formacion.springboot.app.micro.item.models.service.ItemService;
+import com.formacion.springboot.app.micro.item.models.service.ItemServiceImpl;
 import com.netflix.discovery.converters.Auto;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.slf4j.Logger;
