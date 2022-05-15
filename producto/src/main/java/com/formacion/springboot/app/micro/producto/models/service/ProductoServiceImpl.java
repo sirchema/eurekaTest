@@ -1,7 +1,7 @@
 package com.formacion.springboot.app.micro.producto.models.service;
 
 import com.formacion.springboot.app.micro.producto.models.dao.ProductoDao;
-import com.formacion.springboot.app.micro.producto.models.entity.Producto;
+import com.formacion.springboot.app.commons.models.entity.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,5 +24,17 @@ public class ProductoServiceImpl implements ProductoService{
     @Transactional(readOnly = true)
     public Producto findById(Long id) {
         return productoDao.findById(id).orElse(null);
+    }
+
+    @Override
+    @Transactional
+    public Producto save(Producto producto) {
+        return productoDao.save(producto);
+    }
+
+    @Override
+    @Transactional
+    public void deleteById(Long id) {
+        productoDao.deleteById(id);
     }
 }

@@ -1,5 +1,7 @@
 package com.formacion.springboot.app.micro.item.models;
 
+import com.formacion.springboot.app.commons.models.entity.Producto;
+
 public class Item {
 
     private Producto producto;

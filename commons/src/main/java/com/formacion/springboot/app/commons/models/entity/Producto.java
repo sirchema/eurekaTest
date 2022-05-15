@@ -1,13 +1,29 @@
-package com.formacion.springboot.app.micro.item.models;
+package com.formacion.springboot.app.commons.models.entity;
 
+import javax.persistence.*;
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Producto {
+@Entity
+@Table(name = "productos")
+public class Producto implements Serializable {
 
+    @Serial
+    private static final long serialVersionUID = 8266154267672481369L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
     private Double precio;
+
+    @Column(name = "create_at")
+    @Temporal(TemporalType.DATE)
     private Date createAt;
+
+    @Transient
     private Integer port;
 
     public Long getId() {
